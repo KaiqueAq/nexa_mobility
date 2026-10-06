@@ -26,7 +26,7 @@ public class FuncionarioService {
         if (repository.findByMatricula(funcionario.getMatricula()).isPresent())
             throw new IllegalArgumentException("Funcionário já cadastrado");
 
-            return repository.save(funcionario);
+        return repository.save(funcionario);
 
     }
         // Put
@@ -37,7 +37,8 @@ public class FuncionarioService {
 
             funcionario.setId(id);
             return repository.save(funcionario);
-        }
+
+    }
 
         public void deletarFuncionario (Long id) {
             if (!repository.existsById(id)) {
